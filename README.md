@@ -61,20 +61,5 @@ curl -X POST -H "Content-Type: application/json" -d '{"expression": "2++2"}' htt
     "error": "Expression is not valid"
 }
 ```
-
-#### Ошибка 500: Внутренняя ошибка сервера
-- Эта ошибка редкая и указывает на проблему на стороне сервера.
-- Пример: если функция `Calc` сталкивается с неожиданным состоянием (например, разыменование nil-указателя).
-##### Запрос:
-```bash
-curl -X POST -H "Content-Type: application/json" -d '{"expression": null}' http://localhost:8080/api/v1/calculate
-```
-##### Ответ:
-```json
-{
-    "error": "Internal server error"
-}
-```
-
 ## Тестирование
 Вы можете протестировать API с помощью инструментов, таких как `curl`, Postman или написать автоматизированные тесты на Go.
